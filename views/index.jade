@@ -1,5 +1,65 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  // Shopping Cart table
+  div#insert(style='display:none')
+    .modal-header
+      button.close(type='button', data-dismiss='modal', aria-label='Close')
+        span(aria-hidden='true') ×
+      h3#myModalLabel.modal-title Add New Quote :
+    // Body
+    .jumbotron#insert
+        .col-md-8
+          i.fa.fa-pencil.prefix Quote
+          input#insertquote.form-control(type='text', name='quote')
+        .col-md-4
+          i.fa.fa-user.prefix Author
+          input#insertauthor.form-control(type='text', name='quote')
+        button.btn.btn-stc.btn-rounded(type='button',onclick='insert_quote()') Save
+        a.btn.btn-warning.btn-rounded(type='button',onclick='hideinsert()') Cancel
+  div#update(style='display:none')
+    .modal-header
+      button.close(type='button', data-dismiss='modal', aria-label='Close')
+        span(aria-hidden='true') ×
+      h3#myModalLabel.modal-title Update Quote :
+    // Body
+    .jumbotron#update
+        .col-md-8
+          i.fa.fa-pencil.prefix Quote
+          input#updatequote.form-control(type='text', name='quote')
+        .col-md-4
+          i.fa.fa-user.prefix Author
+          input#updateauthor.form-control(type='text', name='quote')
+        button.btn.btn-elegant.btn-rounded(type='button',onclick='update_quote_ajax()') Update
+        a.btn.btn-danger.btn-rounded(type='button',onclick='cancelupdate()') Cancel
+  a.btn-floating.btn-large.blue.waves-light(onclick='showinsert()')
+    i.fa.fa-plus
+  .table-responsive
+  table.table.product-table
+    // Table head
+    thead
+      tr
+        th Quotes
+        th Authors
+        th lastUpdate
+        th
+    // /Table head
+    // Table body
+    tbody#quote_table
+
+      // /First row
+    // /Table body
+  // /Shopping Cart table
+
+
+  section#advanced
+    // Footer
+    footer.page-footer.center-on-small-only
+      .footer-copyright
+        .container-fluid
+          | © 2016 Copyright:
+          a(href='http://sahbanagold.github.io')  sahbanagold.github.io
+
+  block ajaxify
+  block ready
+  block ajaxscript

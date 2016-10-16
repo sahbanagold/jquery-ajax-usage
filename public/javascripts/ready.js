@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $.ajax({
     type: 'GET',
-    url: '/api/stock/',
+    url: '/api/quote/',
     dataType: 'json'
   }).done(function(result){
     console.log(result)
