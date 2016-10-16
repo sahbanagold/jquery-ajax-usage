@@ -45,4 +45,4 @@ $.ajax({
 ```
 
 for more about promise style visits:
-![alt tag](http://blog.revathskumar.com/2016/06/why-i-prefer-ajax-promise.html)
+http://blog.revathskumar.com/2016/06/why-i-prefer-ajax-promise.html
